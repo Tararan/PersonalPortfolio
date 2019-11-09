@@ -1,0 +1,44 @@
+.intro {
+    font-size: 22px;
+    font-family: 'Cutive Mono', monospace;
+    border: 1px solid $anthracite;
+    border-radius: 10px;
+    background-color: $nero-grey;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px 1px $black-o-65;   
+    transform: translateY(0);
+    transition: transform 1.75s 9s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &--animated-position {
+        transform: translateY(-200px);
+    }
+
+    &__content {
+        padding: 40px;
+    }
+
+    &__toolbar {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $anthracite;
+        padding: 0 20px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: $anthracite-dark;
+    }
+
+    &__toolbar-buttons {
+        display: flex;
+        width: 60px;
+        justify-content: space-between;
+    }
+    &__toolbar-buttons span {
+        display: flex;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        background-color: $anthracite;
+    }
+}

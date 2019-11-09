@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    ${require('./partials/_head.html')}
+</head>
+
+<body class="">
+    <!-- <body class="prevent-scrolling"> -->
+    <!-- <section class="loading-screen" loading="">
+        ${require('./partials/_loading-screen.html')}
+    </section> -->
+    <main>
+        <section class="status-bar">
+            ${require('./partials/_status-bar.html')}
+        </section>
+        <div class="desktop">
+            ${require('./partials/_desktop-files.html')}
+        </div>
+        <section class="app app--contact app--animate-collapse">
+            <section class="window-wrapper window-wrapper--contact">
+                <div class="container">
+                    ${require('./partials/windows/_contact.html')}
+                </div>
+            </section>
+        </section>
+        <section class="app app--cv app--animate-opening">
+            <header position="" class="window-wrapper window-wrapper--header window-wrapper--fixed">
+                <div class="container">
+                    ${require('./partials/windows/_header.html')}
+                </div>
+            </header>
+            <section position="" class="window-wrapper window-wrapper--intro window-wrapper--intro-1">
+                <div class="container">
+                    ${require('./partials/windows/_intro.html')}
+                </div>
+            </section>
+            <section position="" class="window-wrapper window-wrapper--intro window-wrapper--intro-2 ">
+                <div class="container">
+                    ${require('./partials/windows/_intro.html')}
+                </div>
+            </section>
+            <section position="" class="window-wrapper window-wrapper--intro window-wrapper--intro-3 ">
+                <div class="container">
+                    ${require('./partials/windows/_intro.html')}
+                </div>
+            </section>
+            <section position="" class="window-wrapper window-wrapper--intro window-wrapper--intro-4 ">
+                <div class="container">
+                    ${require('./partials/windows/_intro.html')}
+                </div>
+            </section>
+
+        </section>
+        <section class="app app--portfolio app--animate-collapse">
+            <section position="" class="window-wrapper">
+                ${require('./partials/windows/portfolio/_portfolio.html')}
+            </section>
+        </section>
+        <section class="app app--credits app--animate-collapse">
+            <section class="window-wrapper window-wrapper--credits">
+                <div class="container">
+                    ${require('./partials/windows/_credits.html')}
+                </div>
+            </section>
+        </section>
+    </main>
+
+    </html>

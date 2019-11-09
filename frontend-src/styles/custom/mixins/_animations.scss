@@ -1,0 +1,172 @@
+// Cursor styling
+@mixin cursor-styling {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 31px;
+  background-color: $theme-color;
+  box-shadow: 0px 0px 8px 0px $theme-color;
+  visibility: visible;
+  right: 0;
+  top: 5px;
+}
+
+// Animating height
+@mixin height-animation ($steps, $time) {
+  $height: $steps*(46 + 10px);
+
+  @keyframes height-steps {
+    from {
+      height: 46px;
+    }
+
+    to {
+      height: $height;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes height-display-#{$steps} {
+    99% {
+      visibility: visible;
+    }
+
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  animation: height-steps $time steps($steps, end);
+}
+
+// Animating typing
+@mixin typing-animation ($steps, $time, $time-delay) {
+  $width: ((($steps*1.03) + 1)*(14px));
+  text-shadow: 0 0 10px $theme-color-soft-glow;
+  color: $theme-color;
+
+  width: $width;
+
+  @keyframes typing-#{$steps} {
+    from {
+      width: 0
+    }
+
+    to {
+      width: $width
+    }
+  }
+
+  animation: typing-#{$steps} #{$time}s steps($steps, end);
+  animation-delay: #{$time-delay}s;
+}
+
+// Animating blinking on the caret
+@mixin cursor-blinking-animation ($steps, $time, $time-delay) {
+  position: relative;
+
+  &:after {
+    @include cursor-styling;
+
+    @keyframes blink-caret-#{$steps} {
+
+      from,
+      to {
+        background-color: $theme-color;
+        box-shadow: 0px 0px 10px 0px $theme-color;
+
+      }
+
+      50% {
+        background-color: transparent;
+        box-shadow: 0px 0px 10px 0px transparent;
+
+      }
+    }
+
+    $duration-time: $time-delay+$time;
+
+    animation: blink-caret-#{$steps} 0.75s infinite;
+    animation-delay: #{$duration-time}s;
+  }
+}
+
+// Removing carets at the end of the line
+@mixin cursor-animation ($steps, $time, $time-delay) {
+  position: relative;
+
+  &:after {
+
+    @include cursor-styling;
+    visibility: hidden;
+
+    /* The typewriter cursor effect */
+    @keyframes cursor-animation-#{$steps} {
+      99% {
+        visibility: visible;
+      }
+
+      100% {
+        visibility: hidden;
+      }
+    }
+
+    $duration-time: $time-delay+$time;
+
+    animation: cursor-animation-#{$steps} #{$duration-time}s;
+  }
+}
+
+// Icon shaking animation
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+
+  5% {
+    transform: rotate(30deg);
+  }
+
+  10% {
+    transform: rotate(-30deg);
+  }
+
+  20% {
+    transform: rotate(45deg);
+  }
+
+  40% {
+    transform: rotate(-45deg);
+  }
+
+  60% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes unspin {
+  0% {
+    transform: rotate(0deg) translateY(-50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}

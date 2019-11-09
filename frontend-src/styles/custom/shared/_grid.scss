@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+
+    .header-wrapper & {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+}
+
+$mobile: 540px;

@@ -1,0 +1,57 @@
+.desktop {
+    &__files {
+        position: fixed;
+        z-index: 100;
+        left: 25px;
+        top: 50px;
+        width: 120px;
+        z-index: 0;
+
+        @media (max-width: $mobile) {
+            left: 0;
+            width: 100px;
+        }
+
+        &-icon {
+            display: block;
+            margin-bottom: 50px;
+
+            &,
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+        &-icon-image {
+            margin: 0 auto 10px;
+            width: 100%;
+            max-width: 50px;
+            transform: rotate(0);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-icon-image--collapsed {
+            animation: shake 1.5s ease-out 0.75s;
+        }
+
+        &-icon-text {
+            text-align: center;
+            font-size: 18px;
+            color: $black;
+            margin-bottom: 50px;
+            font-weight: 500;
+            transition: background-color 0.5s ease-in-out;
+
+            .classic-UI & {
+                background-color: $light-grey;
+
+                transition: background-color 0.5s ease-in-out;
+            }
+        }
+    }
+}

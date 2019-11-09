@@ -1,0 +1,46 @@
+.spinner {
+    position: absolute;
+    z-index: 100;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    top: calc(50% - 250px);
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    border-top: 2px solid $theme-color;
+    border-left: 0px solid $theme-color;
+    border-right: 2px solid transparent;
+    border-bottom: 0px;
+    border-radius: 100%;
+    opacity: 1;
+
+    &:after {
+        position: absolute;
+        content: '';
+        height: 8px;
+        width: 8px;
+        border-radius: 100%;
+        background-color: $theme-color;
+        top: 67px;
+        right: 69px;
+    }
+
+    animation: spin 2s linear infinite;
+
+    &.hidden {
+        animation: unset;
+    }
+
+    [loaded-element='true'] & {
+        opacity: 0;
+        transition: opacity 0.75s ease-in-out;
+    }
+
+    @media (max-width: $mobile) {
+        width: 300px;
+        height: 300px;
+    }
+}

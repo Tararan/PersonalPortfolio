@@ -1,0 +1,121 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+
+    @media (max-width: $mobile) {
+
+        div,
+        span,
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .classic-UI {
+
+        div,
+        span,
+        p {
+            font-family: 'VT323', monospace;
+        }
+    }
+}
+
+.hidden-mobile {
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+main {
+
+    &:before {
+        @media (max-width: $mobile) {
+            height: 100vh;
+        }
+
+        content: '';
+        position: fixed;
+        // top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $black;
+        background-image: url("../images/background/benjamin-voros-unsplash.jpg");
+        // background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+
+        transition: background-image 1s ease-in-out,
+        transform 0.5s ease-in-out,
+        width 0.5s ease-in-out,
+        opacity 0.5s ease-in-out,
+        box-shadow 0.5s ease-in-out,
+        border-radius 0.5s ease-in-out;
+
+        .classic-UI & {
+            background-color: $dim-grey;
+            background-size: 5px 5px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-attachment: fixed;
+            background-repeat: repeat;
+
+            transition:
+                transform 0.5s ease-in-out,
+                width 0.5s ease-in-out,
+                opacity 0.5s ease-in-out,
+                box-shadow 0.5s ease-in-out,
+                border-radius 0.5s ease-in-out;
+        }
+    }
+}
+
+.prevent-scrolling {
+    overflow: hidden;
+}
+
+main .desktop .desktop__files,
+main .app--cv .window-wrapper .window,
+main:before {
+    filter: blur(0);
+    transition:
+        border-radius 0.25 s ease-in-out,
+        filter 0.5s ease-in-out,
+        background-color 0.25s ease-in-out,
+        transform 0.5s ease-in-out,
+        width 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+
+    .prevent-scrolling & {
+        filter: blur(20px);
+        transition:
+            border-radius 0.25 s ease-in-out,
+            filter 0.5s ease-in-out,
+            background-color 0.25s ease-in-out,
+            transform 0.5s ease-in-out,
+            width 0.5s ease-in-out,
+            opacity 0.5s ease-in-out;
+    }
+}
+
+.swiper-slide img {
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 0.75s, filter 1.25s;
+    transform: translate3d(0, 0, 0);
+}
+
+.swiper-slide[loaded-element='true'] img {
+    opacity: 1;
+    filter: blur(0px);
+    transition: opacity 0.75s, filter 1.25s;
+
+}
+
+.swiper-slide--visible-description[loaded-element='true'] img {
+    filter: blur(20px);
+    transition: filter 0.5s ease-in-out;
+}

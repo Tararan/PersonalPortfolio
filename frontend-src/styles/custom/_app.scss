@@ -1,0 +1,163 @@
+.app {
+    $animation-duration: 0.75s;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+
+    &--animate-collapse {
+        pointer-events: none;
+    }
+
+    // @supports (position: sticky) {
+
+    //     @for $i from 1 through 5 {
+    //         &--cv .window-wrapper:nth-child(#{$i}) {
+    //             position: sticky;
+    //             top: calc((#{$i}*40px));
+    //         }
+    //     }
+    // }
+
+    &--animate-collapse.app--cv>.window-wrapper {
+        // position: sticky;
+        position: relative;
+        top: 0;
+        height: 0;
+        // Important is neccesary to override inline styles added by js
+        margin-top: 0 !important;
+        opacity: 0 !important;
+
+        transform: translateY(0) scale(0.02) !important;
+        transform-origin: top left;
+
+        transition:
+            background-color $animation-duration ease-in-out,
+            margin 10s ease-in-out 1s,
+            transform $animation-duration ease-in-out 25s,
+            height $animation-duration ease-in-out 25s,
+            opacity $animation-duration ease-in-out 30s;
+    }
+
+    &--animate-collapse>.window-wrapper {
+        $animation-duration: 0.75s;
+        opacity: 0 !important;
+        transform-origin: top left;
+
+        transition:
+            background-color $animation-duration ease-in-out,
+            margin $animation-duration ease-in-out,
+            transform $animation-duration ease-in-out 0.25s,
+            height $animation-duration ease-in-out 0.25s,
+            opacity $animation-duration ease-in-out 0.3s;
+    }
+
+    &--animate-collapse.app--contact>.window-wrapper,
+    &--animate-collapse.app--portfolio>.window-wrapper {
+        transform: translateY(-20px) scale(0.02) !important;
+
+        transition:
+            background-color $animation-duration ease-in-out,
+            margin $animation-duration ease-in-out,
+            transform $animation-duration ease-in-out,
+            height $animation-duration ease-in-out,
+            opacity $animation-duration ease-in-out 0.1s;
+    }
+
+    &--animate-collapse.app--portfolio>.window-wrapper {
+        transform: translateY(240px) scale(0.02) !important;
+    }
+
+    &--animate-collapse.app--credits>.window-wrapper {
+        transform: translateY(500px) scale(0.02) !important;
+    }
+
+    &--contact,
+    &--portfolio,
+    &--credits {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        @media (max-width: $mobile) {
+            align-items: flex-start;
+            top: 45px;
+            max-height: calc(100vh - 200px);
+            z-index: 100;
+        }
+
+        &>.window-wrapper {
+            transform: translateY(0) scale(1) !important;
+            transform-origin: top left;
+
+            transition:
+                opacity $animation-duration ease-in-out 0.15s,
+                background-color $animation-duration ease-in-out,
+                margin $animation-duration ease-in-out,
+                transform $animation-duration ease-in-out 0.25s;
+
+            @media (max-width: $mobile) {
+                padding-top: 0px;
+                height: 100%;
+                max-height: 100%;
+            }
+        }
+
+        & .window-wrapper .window {
+            @media (max-width: $mobile) {
+                max-height: 100%;
+                overflow-y: scroll;
+            }
+        }
+    }
+
+    &--credits {
+        .window__content {
+            @media (max-width: $mobile) {
+                height: 500px;
+                overflow-y: scroll;
+            }
+        }
+    }
+
+    &--portfolio {
+        z-index: 100;
+
+        .window__content {
+            height: calc(100% - 80px);
+            padding: 0;
+            position: relative;
+            z-index: -1;
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            // height: 100%;
+            border: 0;
+            z-index: -1;
+            // pointer-events: none;
+        }
+
+        &>.window-wrapper {
+            width: calc(100vw - 100px);
+            height: calc(100vh - 100px);
+
+            @media (max-width: $mobile) {
+                // padding-top: 45px;
+                width: calc(100vw - 10px);
+                height: calc(100vh - 150px);
+            }
+        }
+
+        & .window {
+            max-width: unset;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

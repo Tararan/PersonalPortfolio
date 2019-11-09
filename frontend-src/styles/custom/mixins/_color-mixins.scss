@@ -1,0 +1,13 @@
+@mixin defaultBackground {
+    background-color: $nero-grey-o-95;
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        background-color: $nero-grey-o-8;
+        backdrop-filter: blur(20px) saturate(150%);
+    }
+
+
+    .classic-UI & {
+        background-color:$white;
+    }
+}

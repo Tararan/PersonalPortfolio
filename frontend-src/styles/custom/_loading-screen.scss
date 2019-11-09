@@ -1,0 +1,114 @@
+.loading-screen {
+    $circle-width: 400;
+    $circle-width-half: $circle-width/2;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background-color: $anthracite-dark;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    transition:
+        background-color 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+
+    &--loaded {
+        opacity: 0;
+        pointer-events: none;
+
+        transition:
+            opacity 0.75s ease-in-out 0.25s,
+            transform 0.75s ease-in-out;
+    }
+
+    &--half-loaded {
+        opacity: 0.75;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    &__loader {
+        width: #{$circle-width}px;
+        height: #{$circle-width}px;
+        margin: 50px auto;
+        position: relative;
+    }
+
+    &__loader-circle {
+        width: #{$circle-width-half}px;
+        height: #{$circle-width}px;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+    }
+
+    &__loader-circle--right {
+        right: 0;
+    }
+
+    &__loader-circle--left {
+        left: 0;
+    }
+
+    &__loader-circle-fill {
+        width: #{$circle-width}px;
+        height: #{$circle-width}px;
+        border: 2px solid $black;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &__loader-circle-fill--right {
+        border-top: 2px solid $theme-color;
+        border-right: 2px solid $theme-color;
+        right: 0px;
+    }
+
+    &__loader-circle-fill--left {
+        border-bottom: 2px solid $theme-color;
+        border-left: 2px solid $theme-color;
+        left: 0px;
+    }
+
+    &__bar {
+        height: 2px;
+        background-color: $theme-color;
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__image {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        background-size: contain;
+        background-image: url('../images/raven-logo.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.7;
+    }
+
+    &__text {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        text-align: center;
+        color: $accadia;
+        font-size: 30px;
+        font-family: 'Cutive Mono', monospace;
+    }
+}

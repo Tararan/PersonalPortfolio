@@ -1,0 +1,51 @@
+.swiper {
+    &-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-wrapper {
+        height: 100%;
+        width: auto;
+        display: flex;
+        position: relative;
+    }
+
+    &-slide {
+        min-width: 100%;
+        display: flex;
+        overflow-y: scroll;
+
+        &:before {
+            content: '';
+            position: fixed;
+            z-index: 200;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            border-top: 1px solid $dark-violet;
+            border-bottom: 1px solid $dark-violet;
+            background-color: $heliotrope;
+            // box-shadow: $glow;
+            border-radius: 20px;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        &[loaded-element='true']:before {
+            transform: scaleX(1);
+            transition: transform 4s ease-in-out;
+        }
+
+        // &--visible-description {
+        //     overflow-y: hidden;
+        // }
+
+        // .window__toolbar+.window__content & {
+        //     position: relative;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        // }
+    }
+}

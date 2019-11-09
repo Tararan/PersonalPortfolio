@@ -1,0 +1,80 @@
+.status-bar {
+    height: 30px;
+    width: 100vw;
+    background-color: $black;
+    position: fixed;
+    top: 0;
+    color: $dim-grey;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 10px;
+    z-index: 1000;
+
+    @media (max-width: $mobile) {
+        span, div {
+            font-size: 12px;
+        }
+    }
+
+    @include defaultBackground;
+
+
+    &__system,
+    &__system-tools {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__system-tools {
+        padding-right: 10px;
+        width: 100%;
+    }
+
+    &__system-tools-env {
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+            white-space: nowrap;
+            cursor: unset;
+            padding-right: 10px;
+        }
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+        padding-right: 10px;
+
+        .classic-UI & {
+            background-color: $white;
+        }
+    }
+
+    &__info {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__system-calendar {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    &__info img {
+        filter: brightness(3);
+
+        .classic-UI & {
+            filter: brightness(1);
+        }
+    }
+}
