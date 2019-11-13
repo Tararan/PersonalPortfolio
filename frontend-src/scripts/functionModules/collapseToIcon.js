@@ -29,13 +29,18 @@ const collapseToIconFunction = function () {
         collapseWindows.on('click', function () {
             windowFixedElement = $('.window-wrapper--fixed');
             let scrollDuration = parseInt(5 / windowFixedElement.length) * animationDuration;
+            // let hiddenClassTiming = scrollDuration + 50;
             if ((appName === CV)) {
                 collapseWindowsAnimation($(document).height(), scrollDuration);
                 setTimeout(function () {
                     app.addClass(collapseWindowsClass);
-                    // app.removeClass(openWindowsClass);
-                    // appIconImg.addClass(iconAnimated);
+                    app.removeClass(openWindowsClass);
+                    appIconImg.addClass(iconAnimated);
                 }, scrollDuration);
+                // setTimeout(function () {
+                //     app.addClass('hidden');
+                // }, hiddenClassTiming);
+
             } else {
                 app.addClass(collapseWindowsClass);
                 app.removeClass(openWindowsClass);
@@ -44,6 +49,10 @@ const collapseToIconFunction = function () {
         });
         // Animating opening
         appIcon.on('click', function () {
+            /*eslint-disable*/
+            console.log(app);
+            /*eslint-enable*/
+            app.removeClass('hidden');
             windowFixedElement = $('.window-wrapper--fixed');
             let scrollDuration = parseInt(5 / windowFixedElement.length) * animationDuration;
             app.removeClass(openWindowsClass);
@@ -67,7 +76,7 @@ const collapseToIconFunction = function () {
             if ((appName === CV)) {
                 appSiblings.addClass(collapseWindowsClass);
                 appSiblings.removeClass(openWindowsClass);
-                appSiblingsIconImg.addClass(iconAnimated);
+                // appSiblingsIconImg.addClass(iconAnimated);
                 setTimeout(function () {
                     app.removeClass(collapseWindowsClass);
                     app.addClass(openWindowsClass);

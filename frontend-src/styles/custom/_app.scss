@@ -1,7 +1,13 @@
 .app {
     $animation-duration: 0.75s;
+    width: calc(100vw - 150px);
+    margin: auto;
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    // transition: transform 0.5s ease-in-out;
+    transform-origin: 0 0;
+    // transform: translate(0, 1) scale(1) !important;
+    // transition: transform 0.75s ease-in-out;
+
 
     &--animate-collapse {
         pointer-events: none;
@@ -17,30 +23,15 @@
     //     }
     // }
 
-    &--animate-collapse.app--cv>.window-wrapper {
-        // position: sticky;
-        position: relative;
-        top: 0;
-        height: 0;
-        // Important is neccesary to override inline styles added by js
-        margin-top: 0 !important;
-        opacity: 0 !important;
-
-        transform: translateY(0) scale(0.02) !important;
-        transform-origin: top left;
-
-        transition:
-            background-color $animation-duration ease-in-out,
-            margin 10s ease-in-out 1s,
-            transform $animation-duration ease-in-out 25s,
-            height $animation-duration ease-in-out 25s,
-            opacity $animation-duration ease-in-out 30s;
+    &--animate-collapse.app--cv {
+        transform: translate(0, 50px) scale(0.02) !important;
+        transition: transform 0.75s ease-in-out;
     }
 
     &--animate-collapse>.window-wrapper {
         $animation-duration: 0.75s;
         opacity: 0 !important;
-        transform-origin: top left;
+        transform-origin: 0;
 
         transition:
             background-color $animation-duration ease-in-out,

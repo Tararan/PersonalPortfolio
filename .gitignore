@@ -285,17 +285,7 @@ build/Release
 .vscode/
 
 # Kentico Specifics
-src/kentico/CMS/App_Data/CMSModules/DeviceProfile/logFiftyOne.txt
-src/kentico/CMS/App_Data/CMSModules/WebFarm/
-src/kentico/CMS/App_Data/CMSModules/SmartSearch/
-src/kentico/CMS/App_Themes/Emakina/Scripts/
-src/kentico/CMS/App_Themes/Emakina/Styles/
-src/kentico/CMS/App_Data/CIRepository/
-src/kentico/CMS/OttoPortal/
-src/kentico/CMS/App_Data/CMSTemp/
-!src/kentico/CMS/CMSAdminControls/Debug/
-!src/kentico/CMS/CMSModules/System/Debug/
-src/Kentico/CMS/App_Themes/Emakina/
+src/
 
 node_modules/
 .idea/

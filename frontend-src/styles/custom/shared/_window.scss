@@ -27,26 +27,26 @@
 
     @include defaultBackground;
 
-    transition: background-color 0.5s ease-in-out,
-    transform 0.5s ease-in-out,
-    width 0.5s ease-in-out,
-    opacity 0.5s ease-in-out,
-    box-shadow 0.5s ease-in-out,
-    border-radius 0.5s ease-in-out;
+    // transition: background-color 0.5s ease-in-out,
+    // transform 0.5s ease-in-out,
+    // width 0.5s ease-in-out,
+    // opacity 0.5s ease-in-out,
+    // box-shadow 0.5s ease-in-out,
+    // border-radius 0.5s ease-in-out;
 
-    .window-wrapper--transparency & {
-        background-color: $nero-grey-o-75;
-        transition:
-            background-color 0.25s ease-in-out,
-            transform 0.5s ease-in-out,
-            width 0.5s ease-in-out,
-            opacity 0.5s ease-in-out;
+    // .window-wrapper--transparency & {
+    //     background-color: $nero-grey-o-75;
+    //     transition:
+    //         background-color 0.25s ease-in-out,
+    //         transform 0.5s ease-in-out,
+    //         width 0.5s ease-in-out,
+    //         opacity 0.5s ease-in-out;
 
-        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-            background-color: $nero-grey-o-25;
-            backdrop-filter: blur(20px) saturate(150%);
-        }
-    }
+    //     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    //         background-color: $nero-grey-o-25;
+    //         backdrop-filter: blur(20px) saturate(150%);
+    //     }
+    // }
 
     .window-wrapper--contact & {
         background-color: $anthracite;
@@ -237,10 +237,6 @@
             background-color 0.25s ease-in-out;
     }
 
-    & .swiper-slide {
-        position: relative;
-    }
-
     &__toolbar--tabs-content {
         position: fixed;
         z-index: 100;
@@ -262,14 +258,6 @@
             opacity: 1;
             transition: opacity 0.25s ease-in-out;
         }
-    }
-
-    .window-wrapper--header & {
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: 500px;
-        transform: translateY(0);
     }
 
     &__content-contact-info {
@@ -317,15 +305,13 @@
     }
 
     &-wrapper {
-        position: static;
+        // position: relative;
+        // z-index: 1;
         margin-top: 40px;
-
-
         opacity: 1;
         left: 0;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
         transition: opacity 0.25s;
 
         // @supports not (position: sticky) {
@@ -347,6 +333,14 @@
             position: fixed;
             top: 0;
             left: 0;
+        }
+
+        &--header .window {
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 500px;
+            transform: translateY(0);
         }
 
         &--header+& {
