@@ -32,14 +32,17 @@ const collapseToIconFunction = function () {
             // let hiddenClassTiming = scrollDuration + 50;
             if ((appName === CV)) {
                 collapseWindowsAnimation($(document).height(), scrollDuration);
+                // collapseWindowsAnimation($(document).height(), scrollDuration);
                 setTimeout(function () {
+                    app.addClass('app--animate-helper');
                     app.addClass(collapseWindowsClass);
                     app.removeClass(openWindowsClass);
                     appIconImg.addClass(iconAnimated);
                 }, scrollDuration);
-                // setTimeout(function () {
-                //     app.addClass('hidden');
-                // }, hiddenClassTiming);
+                setTimeout(function () {
+                    app.addClass('hidden');
+                    app.removeClass('app--animate-helper');
+                }, hiddenClassTiming);
 
             } else {
                 app.addClass(collapseWindowsClass);
@@ -73,31 +76,45 @@ const collapseToIconFunction = function () {
                 }
             }
             // Closing window if you click on CV icon
-            if ((appName === CV)) {
-                appSiblings.addClass(collapseWindowsClass);
-                appSiblings.removeClass(openWindowsClass);
-                // appSiblingsIconImg.addClass(iconAnimated);
-                setTimeout(function () {
-                    app.removeClass(collapseWindowsClass);
-                    app.addClass(openWindowsClass);
-                    windowEl.not('.window-wrapper--header').removeClass(windowFixedClass);
-                    windowEl.removeClass(windowTransparencyClass);
-                }, scrollDuration / 5);
+            // if ((appName === CV)) {
+            //     appSiblings.addClass(collapseWindowsClass);
+            //     appSiblings.removeClass(openWindowsClass);
+            //     // appSiblingsIconImg.addClass(iconAnimated);
+            //     setTimeout(function () {
+            //         app.removeClass(collapseWindowsClass);
+            //         app.addClass(openWindowsClass);
+            //         windowEl.not('.window-wrapper--header').removeClass(windowFixedClass);
+            //         windowEl.removeClass(windowTransparencyClass);
+            //     }, scrollDuration / 5);
                 // Closing CV window if you click on other icons
-            } else if (((appName !== CV) && $('.app--cv').hasClass(openWindowsClass))) {
-                collapseWindowsAnimation($(document).height(), scrollDuration);
-                setTimeout(function () {
-                    appSiblings.addClass(collapseWindowsClass);
-                    app.removeClass(collapseWindowsClass);
-                    appSiblings.removeClass(openWindowsClass);
-                    app.addClass(openWindowsClass);
-                }, scrollDuration);
-            } else {
+            // } 
+            // else if (((appName !== CV) && $('.app--cv').hasClass(openWindowsClass))) {
+            //     collapseWindowsAnimation($(document).height(), scrollDuration);
+            //     // collapseWindowsAnimation($(document).height(), scrollDuration);
+            //     setTimeout(function () {
+            //         app.addClass('app--animate-helper');
+            //         app.addClass(collapseWindowsClass);
+            //         app.removeClass(openWindowsClass);
+            //         appIconImg.addClass(iconAnimated);
+            //     }, scrollDuration);
+            //     setTimeout(function () {
+            //         app.addClass('hidden');
+            //         app.removeClass('app--animate-helper');
+            //     }, hiddenClassTiming);
+                // collapseWindowsAnimation($(document).height(), scrollDuration);
+                // setTimeout(function () {
+                //     appSiblings.addClass(collapseWindowsClass);
+                //     app.removeClass(collapseWindowsClass);
+                //     appSiblings.removeClass(openWindowsClass);
+                //     app.addClass(openWindowsClass);
+                // }, scrollDuration);
+            // } 
+            // else {
                 appSiblings.addClass(collapseWindowsClass);
                 app.removeClass(collapseWindowsClass);
                 appSiblings.removeClass(openWindowsClass);
                 app.addClass(openWindowsClass);
-            }
+            // }
         });
     }
 

@@ -1,8 +1,8 @@
 ﻿'use strict';
 /*eslint-disable*/
 
-// const positionStickySupported = CSS.supports(`(position: sticky) or (-moz-position: sticky) or
-//                        (-o-tposition: sticky) or (-webkit-position: sticky)`);
+const positionStickySupported = CSS.supports(`(position: sticky) or (-moz-position: sticky) or
+                       (-o-tposition: sticky) or (-webkit-position: sticky)`);
 import swipersFunction from './swipers';
 import windowScrollAnimation from './windowScrollAnimation';
 import collapseToIconFunction from './collapseToIcon';
@@ -13,9 +13,9 @@ import portfolioDescriptionFunction from './portfolioDescription';
 
 const functionsInit = function () {
     $(function () {
-        // if (!positionStickySupported) {
+        if (!positionStickySupported) {
         windowScrollAnimation();
-        // }
+        }
         collapseToIconFunction();
         swipersFunction();
         loadingAnimationFunction();

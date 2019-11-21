@@ -1,45 +1,54 @@
 .app {
     $animation-duration: 0.75s;
     width: calc(100vw - 150px);
+    height: 100%;
     margin: auto;
-    position: relative;
-    // transition: transform 0.5s ease-in-out;
-    transform-origin: 0 0;
-    // transform: translate(0, 1) scale(1) !important;
-    // transition: transform 0.75s ease-in-out;
-
+    transform-origin: top left;
+    transform: translate(0, 0) scale(1) !important;
 
     &--animate-collapse {
         pointer-events: none;
     }
 
     // @supports (position: sticky) {
-
     //     @for $i from 1 through 5 {
     //         &--cv .window-wrapper:nth-child(#{$i}) {
     //             position: sticky;
     //             top: calc((#{$i}*40px));
     //         }
     //     }
+
+    //     &--animate-helper .window-wrapper:not(:last-child) {
+    //         position: fixed;
+    //         left: 0;
+    //         right: 0;
+    //         margin: auto;
+    //     }
+
+    //     @for $i from 2 through 5 {
+    //         &--animate-helper .window-wrapper:nth-child(#{$i}) {
+    //             // position: sticky;
+    //             top: calc(((#{$i} + 1)*40px));
+    //         }
+    //     }
+
+    //     &--animate-helper .window-wrapper:last-child {
+    //         margin-top: calc(100vh - 500px);
+    //     }
     // }
 
-    &--animate-collapse.app--cv {
-        transform: translate(0, 50px) scale(0.02) !important;
-        transition: transform 0.75s ease-in-out;
-    }
-
-    &--animate-collapse>.window-wrapper {
-        $animation-duration: 0.75s;
-        opacity: 0 !important;
-        transform-origin: 0;
-
-        transition:
-            background-color $animation-duration ease-in-out,
-            margin $animation-duration ease-in-out,
-            transform $animation-duration ease-in-out 0.25s,
-            height $animation-duration ease-in-out 0.25s,
-            opacity $animation-duration ease-in-out 0.3s;
-    }
+    // &--animate-collapse.app--cv {
+    //     position: fixed;
+    //     top: -40px;
+    //     left: 0;
+    //     right: 0;
+    //     // height: 200px;
+    //     // transform: trascale(0.02) !important;
+    //     opacity: 0;
+    //     transform: translate(0, 80px) scale(0.05) !important;
+    //     transition: transform 0.75s ease-in-out,
+    //         opacity 0.4s ease-in-out 0.25s;
+    // }
 
     &--animate-collapse.app--contact>.window-wrapper,
     &--animate-collapse.app--portfolio>.window-wrapper {
@@ -61,6 +70,7 @@
         transform: translateY(500px) scale(0.02) !important;
     }
 
+    &--cv,
     &--contact,
     &--portfolio,
     &--credits {
@@ -73,6 +83,7 @@
         justify-content: center;
         height: 100%;
 
+
         @media (max-width: $mobile) {
             align-items: flex-start;
             top: 45px;
@@ -83,6 +94,7 @@
         &>.window-wrapper {
             transform: translateY(0) scale(1) !important;
             transform-origin: top left;
+            width: 100%;
 
             transition:
                 opacity $animation-duration ease-in-out 0.15s,
@@ -128,10 +140,8 @@
             position: absolute;
             width: 100%;
             top: 0;
-            // height: 100%;
             border: 0;
             z-index: -1;
-            // pointer-events: none;
         }
 
         &>.window-wrapper {
@@ -139,7 +149,6 @@
             height: calc(100vh - 100px);
 
             @media (max-width: $mobile) {
-                // padding-top: 45px;
                 width: calc(100vw - 10px);
                 height: calc(100vh - 150px);
             }

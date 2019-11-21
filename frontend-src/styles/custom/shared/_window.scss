@@ -3,6 +3,7 @@
     opacity: 1 !important;
     width: 100%;
     max-width: 1200px;
+    min-height: 500px;
     width: 100%;
     font-family: 'Cutive Mono', monospace;
     border: 1px solid $anthracite;
@@ -12,6 +13,10 @@
     transform: scaleX(1);
     box-shadow: $standard-shadow;
     color: $dim-grey;
+    overflow: hidden;
+
+    max-height: 80vh;
+    overflow-y: scroll;
 
     .classic-UI & {
         border-radius: 0px;
@@ -79,6 +84,8 @@
 
     &__content {
         padding: 40px;
+        height: 700px;
+        overflow-y: scroll;
     }
 
     // &__content-media {
@@ -305,8 +312,6 @@
     }
 
     &-wrapper {
-        // position: relative;
-        // z-index: 1;
         margin-top: 40px;
         opacity: 1;
         left: 0;
@@ -315,7 +320,7 @@
         transition: opacity 0.25s;
 
         // @supports not (position: sticky) {
-        margin-top: 0;
+        //     margin-top: 0;
         // }
 
         // @supports (position: sticky) {
@@ -329,24 +334,24 @@
 
 
         // @supports not (position: sticky) {
-        &--header {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
+        //     &--header {
+        //         position: fixed;
+        //         top: 0;
+        //         left: 0;
+        //     }
 
-        &--header .window {
-            left: 0;
-            right: 0;
-            margin: auto;
-            height: 500px;
-            transform: translateY(0);
-        }
+        //     &--header .window {
+        //         left: 0;
+        //         right: 0;
+        //         margin: auto;
+        //         height: 500px;
+        //         transform: translateY(0);
+        //     }
 
-        &--header+& {
-            margin-top: 580px;
-            top: -40px;
-        }
+        //     &--header+& {
+        //         margin-top: 580px;
+        //         top: -40px;
+        //     }
 
         // }
 
@@ -359,11 +364,11 @@
             position: relative;
         }
 
-        @for $i from 1 through 5 {
-            .cv &:nth-child(#{$i}) {
-                max-height: calc(100vh - (#{$i}*40px));
-            }
-        }
+        // @for $i from 1 through 5 {
+        //     .cv &:nth-child(#{$i}) {
+        //         max-height: calc(100vh - (#{$i}*40px));
+        //     }
+        // }
 
         &--fixed {
             position: fixed;
