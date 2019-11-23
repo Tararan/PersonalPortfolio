@@ -32,27 +32,6 @@
 
     @include defaultBackground;
 
-    // transition: background-color 0.5s ease-in-out,
-    // transform 0.5s ease-in-out,
-    // width 0.5s ease-in-out,
-    // opacity 0.5s ease-in-out,
-    // box-shadow 0.5s ease-in-out,
-    // border-radius 0.5s ease-in-out;
-
-    // .window-wrapper--transparency & {
-    //     background-color: $nero-grey-o-75;
-    //     transition:
-    //         background-color 0.25s ease-in-out,
-    //         transform 0.5s ease-in-out,
-    //         width 0.5s ease-in-out,
-    //         opacity 0.5s ease-in-out;
-
-    //     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    //         background-color: $nero-grey-o-25;
-    //         backdrop-filter: blur(20px) saturate(150%);
-    //     }
-    // }
-
     .window-wrapper--contact & {
         background-color: $anthracite;
         background-image: url('../images/noise-txtr.png');
@@ -69,28 +48,17 @@
         }
     }
 
+    .window-wrapper--cv &,
     .window-wrapper--credits & {
         background-color: $white;
         background-image: url('../images/noise-txtr.png');
     }
-
-    // @for $i from 1 through 5 {
-    //     .window-wrapper--transparency:nth-child(#{$i}) & {
-    //         margin: auto;
-    //         transform: scale(calc(((1 - (1/#{$i}))* 0.2) + 0.8));
-    //         transform-origin: top center;
-    //     }
-    // }
 
     &__content {
         padding: 40px;
         height: 700px;
         overflow-y: scroll;
     }
-
-    // &__content-media {
-    //     overflow-y: scroll;
-    // }
 
     &__toolbar {
         display: flex;
@@ -112,7 +80,10 @@
         .window-wrapper--contact & {
             background-color: transparent;
             border-bottom: 1px solid $anthracite-dark;
+        }
 
+        .app--cv & {
+            background-color: $office-blue;
         }
     }
 
@@ -267,7 +238,8 @@
         }
     }
 
-    &__content-contact-info {
+    &__content-contact-info,
+    &__content-cv-info {
         display: flex;
         padding: 0 0 20px;
 
@@ -276,6 +248,7 @@
         }
     }
 
+    &__content-cv-info-title,
     &__content-contact-info-title {
         width: 200px;
         font-weight: 700;
@@ -288,6 +261,7 @@
         }
     }
 
+    &__content-cv-info-text,
     &__content-contact-info-text {
         display: flex;
         flex-direction: column;
@@ -295,12 +269,14 @@
         justify-content: center;
     }
 
+    &__content-cv-info--border,
     &__content-contact-info--border {
         display: flex;
         padding: 20px 0;
         border-top: 1px solid $accadia;
     }
 
+    &__content-cv-info-image,
     &__content-contact-info-image {
         background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApQF5An8NodCYeec-M524_uFWNnTEvz71FRZmsHvHOs2hTmmm');
         background-repeat: no-repeat;
@@ -311,6 +287,11 @@
         margin-right: 45px;
     }
 
+    &__content-cv-info-image {
+        border-radius: 0;
+        box-shadow: $drop-shadow;
+    }
+
     &-wrapper {
         margin-top: 40px;
         opacity: 1;
@@ -318,42 +299,6 @@
         margin-left: auto;
         margin-right: auto;
         transition: opacity 0.25s;
-
-        // @supports not (position: sticky) {
-        //     margin-top: 0;
-        // }
-
-        // @supports (position: sticky) {
-        //     margin-top: 0;
-        //     padding-bottom: 40px;
-        // }
-
-        // @media (max-width: $mobile) {
-        //     padding-top: 45px;
-        // }
-
-
-        // @supports not (position: sticky) {
-        //     &--header {
-        //         position: fixed;
-        //         top: 0;
-        //         left: 0;
-        //     }
-
-        //     &--header .window {
-        //         left: 0;
-        //         right: 0;
-        //         margin: auto;
-        //         height: 500px;
-        //         transform: translateY(0);
-        //     }
-
-        //     &--header+& {
-        //         margin-top: 580px;
-        //         top: -40px;
-        //     }
-
-        // }
 
         &--transparency {
             transition: opacity 0.25s,
@@ -363,12 +308,6 @@
         .cv &:last-child {
             position: relative;
         }
-
-        // @for $i from 1 through 5 {
-        //     .cv &:nth-child(#{$i}) {
-        //         max-height: calc(100vh - (#{$i}*40px));
-        //     }
-        // }
 
         &--fixed {
             position: fixed;

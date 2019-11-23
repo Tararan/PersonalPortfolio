@@ -3,6 +3,7 @@
     width: calc(100vw - 150px);
     height: 100%;
     margin: auto;
+    opacity: 1;
     transform-origin: top left;
     transform: translate(0, 0) scale(1) !important;
 
@@ -10,55 +11,15 @@
         pointer-events: none;
     }
 
-    // @supports (position: sticky) {
-    //     @for $i from 1 through 5 {
-    //         &--cv .window-wrapper:nth-child(#{$i}) {
-    //             position: sticky;
-    //             top: calc((#{$i}*40px));
-    //         }
-    //     }
-
-    //     &--animate-helper .window-wrapper:not(:last-child) {
-    //         position: fixed;
-    //         left: 0;
-    //         right: 0;
-    //         margin: auto;
-    //     }
-
-    //     @for $i from 2 through 5 {
-    //         &--animate-helper .window-wrapper:nth-child(#{$i}) {
-    //             // position: sticky;
-    //             top: calc(((#{$i} + 1)*40px));
-    //         }
-    //     }
-
-    //     &--animate-helper .window-wrapper:last-child {
-    //         margin-top: calc(100vh - 500px);
-    //     }
-    // }
-
-    // &--animate-collapse.app--cv {
-    //     position: fixed;
-    //     top: -40px;
-    //     left: 0;
-    //     right: 0;
-    //     // height: 200px;
-    //     // transform: trascale(0.02) !important;
-    //     opacity: 0;
-    //     transform: translate(0, 80px) scale(0.05) !important;
-    //     transition: transform 0.75s ease-in-out,
-    //         opacity 0.4s ease-in-out 0.25s;
-    // }
-
     &--animate-collapse.app--contact>.window-wrapper,
+    &--animate-collapse.app--credits>.window-wrapper,
+    &--animate-collapse.app--cv>.window-wrapper,
     &--animate-collapse.app--portfolio>.window-wrapper {
-        transform: translateY(-20px) scale(0.02) !important;
+        transform: translateY(-50px) scale(0.02) !important;
+        opacity: 0;
 
         transition:
-            background-color $animation-duration ease-in-out,
-            margin $animation-duration ease-in-out,
             transform $animation-duration ease-in-out,
-            height $animation-duration ease-in-out,
             opacity $animation-duration ease-in-out 0.1s;
     }
 
@@ -67,7 +28,11 @@
     }
 
     &--animate-collapse.app--credits>.window-wrapper {
-        transform: translateY(500px) scale(0.02) !important;
+        transform: translateY(340px) scale(0.02) !important;
+    }
+
+    &--animate-collapse.app--contact>.window-wrapper {
+        transform: translateY(80px) scale(0.02) !important;
     }
 
     &--cv,
@@ -112,15 +77,6 @@
         & .window-wrapper .window {
             @media (max-width: $mobile) {
                 max-height: 100%;
-                overflow-y: scroll;
-            }
-        }
-    }
-
-    &--credits {
-        .window__content {
-            @media (max-width: $mobile) {
-                height: 500px;
                 overflow-y: scroll;
             }
         }

@@ -10,11 +10,12 @@ import loadingAnimationFunction from './loadingAnimation';
 import calendarFunction from './calendar';
 import switchOSFunction from './switchOS';
 import portfolioDescriptionFunction from './portfolioDescription';
+import linkComponents from './linkAnimations';
 
 const functionsInit = function () {
     $(function () {
         if (!positionStickySupported) {
-        windowScrollAnimation();
+            windowScrollAnimation();
         }
         collapseToIconFunction();
         swipersFunction();
@@ -22,6 +23,7 @@ const functionsInit = function () {
         calendarFunction();
         switchOSFunction();
         portfolioDescriptionFunction();
+        linkComponents();
     });
 };
 /*eslint-enable*/

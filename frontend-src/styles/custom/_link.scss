@@ -1,0 +1,32 @@
+.link {
+    position: relative;
+    cursor: pointer;
+
+    &,
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: $pacific-blue;
+    }
+
+    &__effect {
+        white-space: nowrap;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        width: 0;
+        transition: width 0.25s ease-in-out;
+
+        .link:hover & {
+            width: 100%;
+            transition: width 0.55s ease-in-out;
+        }
+
+        &,
+        &:hover,
+        &:focus {
+            color: $black;
+            text-decoration: underline;
+        }
+    }
+}
