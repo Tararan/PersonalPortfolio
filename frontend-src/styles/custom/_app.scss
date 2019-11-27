@@ -7,6 +7,48 @@
     transform-origin: top left;
     transform: translate(0, 0) scale(1) !important;
 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+
+    @media (max-width: $mobile) {
+        align-items: flex-start;
+        top: 45px;
+        max-height: calc(100vh - 200px);
+        z-index: 100;
+    }
+
+    &>.window-wrapper {
+        transform: translateY(0) scale(1) !important;
+        transform-origin: top left;
+        width: 100%;
+
+        transition:
+            opacity $animation-duration ease-in-out 0.15s,
+            background-color $animation-duration ease-in-out,
+            margin $animation-duration ease-in-out,
+            transform $animation-duration ease-in-out 0.25s;
+
+        @media (max-width: $mobile) {
+            padding-top: 0px;
+            height: 100%;
+            max-height: 100%;
+        }
+    }
+
+    & .window-wrapper .window {
+        @media (max-width: $mobile) {
+            max-height: 100%;
+            overflow-y: scroll;
+        }
+    }
+
     &--animate-collapse {
         pointer-events: none;
     }
@@ -35,52 +77,13 @@
         transform: translateY(80px) scale(0.02) !important;
     }
 
-    &--cv,
-    &--contact,
-    &--portfolio,
-    &--credits {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
+    // &--cv,
+    // &--contact,
+    // &--portfolio,
+    // &--credits {
 
 
-        @media (max-width: $mobile) {
-            align-items: flex-start;
-            top: 45px;
-            max-height: calc(100vh - 200px);
-            z-index: 100;
-        }
-
-        &>.window-wrapper {
-            transform: translateY(0) scale(1) !important;
-            transform-origin: top left;
-            width: 100%;
-
-            transition:
-                opacity $animation-duration ease-in-out 0.15s,
-                background-color $animation-duration ease-in-out,
-                margin $animation-duration ease-in-out,
-                transform $animation-duration ease-in-out 0.25s;
-
-            @media (max-width: $mobile) {
-                padding-top: 0px;
-                height: 100%;
-                max-height: 100%;
-            }
-        }
-
-        & .window-wrapper .window {
-            @media (max-width: $mobile) {
-                max-height: 100%;
-                overflow-y: scroll;
-            }
-        }
-    }
+    // }
 
     &--portfolio {
         z-index: 100;

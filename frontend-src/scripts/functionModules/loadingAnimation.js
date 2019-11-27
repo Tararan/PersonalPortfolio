@@ -1,7 +1,8 @@
 const loadingAnimationFunction = function () {
-    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    // const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-    const loadingElements = (isFirefox === true) ? $($('.app--portfolio iframe')[0]) : $('.app--portfolio iframe');
+    const loadingElements = $('img');
+    // const loadingElements = (isFirefox === true) ? $($('.app--portfolio iframe')[0]) : $('.app--portfolio iframe');
     const bar = $('.loading-screen__bar');
     let loadedElCount = 0;
     let loadingProgress = 0;
@@ -12,17 +13,29 @@ const loadingAnimationFunction = function () {
     const rightCircleHalf = $('.loading-screen__loader-circle-fill--right');
     const loadingScreen = $('.loading-screen');
 
+    $('body').on('keyup', function () {
+        setTimeout(function () {
+            loadingElements.each(function () {
+                const self = $(this);
+                self.attr('src', self.attr('data-src'));
+            });
+        }, 250);
+    });
+
     loadingElements.each(function (index) {
         const self = $(this);
         const countEl = loadingElements.length;
         self.attr('loaded-data', parseInt((index / countEl) * 100));
 
         self.on('load', function () {
-            const self = $(this);
-            self.attr('loaded', true);
+            const el = $(this);
+            el.attr('loaded', true);
             loadedElCount += 1;
             loadedPrevCount += 1;
             self.attr('loaded-order', loadedElCount);
+            /*eslint-disable*/
+            console.log('loaded');
+            /*eslint-enable*/
             const completelyLoaded = parseInt((loadedPrevCount / countEl) * 100);
             const loadingInfo = parseInt((loadedElCount / countEl) * 100);
 
@@ -35,6 +48,9 @@ const loadingAnimationFunction = function () {
             // Loading Circle
             const intervalCircle = setInterval(function () {
                 loadingProgressCircle++;
+                /*eslint-disable*/
+                console.log(loadingProgressCircle);
+                /*eslint-enable*/
                 // Info for circular loading
                 if (loadingProgressCircle < (180 + loadingCircleOffset)) {
                     rightCircleHalf.length ? rightCircleHalf[0].style.setProperty('transform', `rotate(${loadingProgressCircle}deg)`) : '';

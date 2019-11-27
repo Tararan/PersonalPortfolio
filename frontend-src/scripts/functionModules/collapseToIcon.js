@@ -4,6 +4,7 @@ const collapseToIconFunction = function () {
     const closeWindow = $('.window__toolbar-buttons-close');
     const openWindowsClass = 'app--animate-opening';
     const app = $('.desktop__files-icon');
+    const header = $('.header');
 
     closeWindow.on('click', function () {
         const self = $(this);
@@ -29,6 +30,11 @@ const collapseToIconFunction = function () {
         const currentAppWindow = $(`.app--${appIconNameString}`);
         currentAppWindow.removeClass(collapseWindowsClass).addClass(openWindowsClass)
             .siblings('.app').removeClass(openWindowsClass).addClass(collapseWindowsClass);
+    });
+
+    // Closing header window
+    $('body').on('keyup', function () {
+        header.addClass('hidden');
     });
 };
 
