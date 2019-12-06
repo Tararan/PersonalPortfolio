@@ -125,7 +125,7 @@
             transition: background-color 0.25s ease-in-out;
         }
 
-        &.window__toolbar-buttons-close {t
+        &.window__toolbar-buttons-close {
             background-color: $red;
             transition: background-color 0.25s ease-in-out;
             border: 1px solid darken($red, 30%);
