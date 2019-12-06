@@ -6,7 +6,6 @@
     opacity: 1;
     transform-origin: top left;
     transform: translate(0, 0) scale(1) !important;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -22,6 +21,7 @@
         top: 45px;
         max-height: calc(100vh - 200px);
         z-index: 100;
+        width: calc(100vw - 20px);
     }
 
     &>.window-wrapper {
@@ -31,8 +31,6 @@
 
         transition:
             opacity $animation-duration ease-in-out 0.15s,
-            background-color $animation-duration ease-in-out,
-            margin $animation-duration ease-in-out,
             transform $animation-duration ease-in-out 0.25s;
 
         @media (max-width: $mobile) {
@@ -60,22 +58,34 @@
         transform: translateY(-50px) scale(0.02) !important;
         opacity: 0;
 
-        transition:
-            transform $animation-duration ease-in-out,
-            opacity $animation-duration ease-in-out 0.1s;
-    }
-
-    &--animate-collapse.app--portfolio>.window-wrapper {
-        transform: translateY(240px) scale(0.02) !important;
-    }
-
-    &--animate-collapse.app--credits>.window-wrapper {
-        transform: translateY(340px) scale(0.02) !important;
+        @media (max-width: $mobile) {
+            transform: translateY(-10px) scale(0.02) !important;
+        }
     }
 
     &--animate-collapse.app--contact>.window-wrapper {
         transform: translateY(80px) scale(0.02) !important;
+
+        @media (max-width: $mobile) {
+            transform: translateY(140px) scale(0.02) !important;
+        }
     }
+
+    &--animate-collapse.app--portfolio>.window-wrapper {
+        transform: translateY(240px) scale(0.02) !important;
+
+        @media (max-width: $mobile) {
+            transform: translateY(280px) scale(0.02) !important;
+        }
+    }
+
+    &--animate-collapse.app--credits>.window-wrapper {
+        transform: translateY(340px) scale(0.02) !important;
+        @media (max-width: $mobile) {
+            transform: translateY(400px) scale(0.02) !important;
+        }
+    }
+
 
     // &--cv,
     // &--contact,

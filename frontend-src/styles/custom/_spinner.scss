@@ -34,13 +34,14 @@
         animation: unset;
     }
 
-    [loaded-element='true'] & {
+    .swiper-slide[loaded-element='true'] & {
+        // display: none;
         opacity: 0;
         transition: opacity 0.75s ease-in-out;
     }
 
-    @media (max-width: $mobile) {
-        width: 300px;
-        height: 300px;
-    }
+    //     @media (max-width: $mobile) {
+    //         width: 300px;
+    //         height: 300px;
+    //     }
 }

@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-content: flex-start;
   min-width: 100%;
-  overflow-y:hidden;
+  overflow-y: hidden;
 
   @include height-animation(3, 9s);
 
@@ -54,7 +54,7 @@
     }
     
     &:nth-child(3) {
-      $animation-params-steps-3: 35;
+      $animation-params-steps-3: 29;
       // $animation-params-time-3: 3;
       $animation-params-delay-3: 6;
 

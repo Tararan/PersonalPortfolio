@@ -1,7 +1,28 @@
 .loading-screen {
     $circle-width: 400;
     $circle-width-half: $circle-width/2;
-    z-index: 200;
+
+    @mixin loader-size {
+        width: #{$circle-width}px;
+        height: #{$circle-width}px;
+
+        @media (max-width: $mobile) {
+            width: #{$circle-width/2}px;
+            height: #{$circle-width/2}px;
+        }
+    }
+
+    @mixin loader-circle-size {
+        width: #{$circle-width-half}px;
+        height: #{$circle-width}px;
+
+        @media (max-width: $mobile) {
+            width: #{$circle-width-half/2}px;
+            height: #{$circle-width/2}px;
+        }
+    }
+
+    z-index: 1000;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,34 +35,23 @@
     margin: auto;
     width: 100vw;
     height: 100vh;
-    transition:
-        background-color 0.5s ease-in-out,
-        opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 
     &--loaded {
         opacity: 0;
         pointer-events: none;
 
-        transition:
-            opacity 0.75s ease-in-out 0.25s,
-            transform 0.75s ease-in-out;
-    }
-
-    &--half-loaded {
-        opacity: 0.75;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 1.25s ease-in-out 0.5s;
     }
 
     &__loader {
-        width: #{$circle-width}px;
-        height: #{$circle-width}px;
-        margin: 50px auto;
+        @include loader-size;
+        margin: -20px auto 50px;
         position: relative;
     }
 
     &__loader-circle {
-        width: #{$circle-width-half}px;
-        height: #{$circle-width}px;
+        @include loader-circle-size;
         position: absolute;
         top: 0;
         overflow: hidden;
@@ -56,8 +66,7 @@
     }
 
     &__loader-circle-fill {
-        width: #{$circle-width}px;
-        height: #{$circle-width}px;
+        @include loader-size;
         border: 2px solid $black;
         border-radius: 50%;
         position: absolute;
@@ -89,6 +98,12 @@
     &__image {
         width: 300px;
         height: 300px;
+
+        @media (max-width: $mobile) {
+            width: 100px;
+            height: 100px;
+        }
+
         position: absolute;
         left: 0;
         right: 0;

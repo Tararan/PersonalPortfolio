@@ -24,9 +24,14 @@
 
         &,
         &:hover,
-        &:focus {
+        &:focus, 
+        &:active {
             color: $black;
             text-decoration: underline;
+
+            .app--contact & {
+                color: $dim-grey;
+            }
         }
     }
 }

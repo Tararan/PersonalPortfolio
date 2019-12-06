@@ -58,6 +58,17 @@
         padding: 40px;
         height: 700px;
         overflow-y: scroll;
+
+        .header & {
+            @media (max-width: $mobile) {
+                padding: 20px 5px;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            height: 500px;
+            padding: 20px;
+        }
     }
 
     &__toolbar {
@@ -114,7 +125,7 @@
             transition: background-color 0.25s ease-in-out;
         }
 
-        &.window__toolbar-buttons-close {
+        &.window__toolbar-buttons-close {t
             background-color: $red;
             transition: background-color 0.25s ease-in-out;
             border: 1px solid darken($red, 30%);
@@ -138,7 +149,6 @@
                     background-color 0.5s ease-in-out;
             }
         }
-
     }
 
     &__toolbar--tabs {
@@ -264,16 +274,25 @@
 
     &__content-cv-info-image,
     &__content-contact-info-image {
-        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApQF5An8NodCYeec-M524_uFWNnTEvz71FRZmsHvHOs2hTmmm');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url('../images/ivo-jurisic-wax-museum.png');
+        background-position: -200px -80px;
+        background-size: 380%;
+        // background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApQF5An8NodCYeec-M524_uFWNnTEvz71FRZmsHvHOs2hTmmm');
         width: 100px;
         height: 100px;
         border-radius: 100%;
         margin-right: 45px;
+
+        @media (max-width: $mobile) {
+            margin-right: 20px;
+        }
     }
 
     &__content-cv-info-image {
+        background-image: url('../images/ivo-jurisic.png');
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: cover;
         border-radius: 0;
         box-shadow: $drop-shadow;
     }
@@ -289,6 +308,10 @@
         &--contact {
             display: flex;
             align-items: center;
+        }
+
+        @media (max-width: $mobile) {
+            margin-top: 10px;
         }
     }
 }

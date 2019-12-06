@@ -4,6 +4,13 @@
   position: absolute;
   width: 14px;
   height: 31px;
+
+  @media (max-width: $mobile) {
+    width: 6px;
+    height: 14px;
+    top: 2px;
+  }
+
   background-color: $theme-color;
   box-shadow: 0px 0px 8px 0px $theme-color;
   visibility: visible;
@@ -42,10 +49,19 @@
 // Animating typing
 @mixin typing-animation ($steps, $time, $time-delay) {
   $width: ((($steps*1.03) + 1)*(14px));
+  $width-mobile: ((($steps*1.03) + 1)*(7px));
+
+  @media (min-width: $mobile) {
+    width: $width;
+  }
+
+  @media (max-width: $mobile) {
+    width: $width-mobile;
+  }
+
   text-shadow: 0 0 10px $theme-color-soft-glow;
   color: $theme-color;
 
-  width: $width;
 
   @keyframes typing-#{$steps} {
     from {
@@ -53,7 +69,13 @@
     }
 
     to {
-      width: $width
+      @media (min-width: $mobile) {
+        width: $width;
+      }
+
+      @media (max-width: $mobile) {
+        width: $width-mobile;
+      }
     }
   }
 
@@ -161,6 +183,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes unspin {
   0% {
     transform: rotate(0deg) translateY(-50%);

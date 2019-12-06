@@ -5,6 +5,8 @@ const collapseToIconFunction = function () {
     const openWindowsClass = 'app--animate-opening';
     const app = $('.desktop__files-icon');
     const header = $('.header');
+    const anyBtn = $('.header__btn');
+    const hiddenHeaderClass = 'header--hidden';
 
     closeWindow.on('click', function () {
         const self = $(this);
@@ -34,8 +36,13 @@ const collapseToIconFunction = function () {
 
     // Closing header window
     $('body').on('keyup', function () {
-        header.addClass('hidden');
+        header.addClass(hiddenHeaderClass);
     });
+
+    anyBtn.on('click', function() {
+        header.addClass(hiddenHeaderClass);
+    });
+
 };
 
 export default collapseToIconFunction;

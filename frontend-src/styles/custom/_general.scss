@@ -9,7 +9,7 @@ body {
         div,
         span,
         p {
-            font-size: 14px;
+            font-size: 18px;
         }
     }
 
@@ -21,6 +21,14 @@ body {
             font-family: 'VT323', monospace;
         }
     }
+}
+
+body {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
 }
 
 .hidden-mobile {
@@ -49,57 +57,32 @@ main {
         background-position: center;
         background-size: cover;
 
-        transition: background-image 1s ease-in-out,
-        transform 0.5s ease-in-out,
-        width 0.5s ease-in-out,
-        opacity 0.5s ease-in-out,
-        box-shadow 0.5s ease-in-out,
-        border-radius 0.5s ease-in-out;
-
         .classic-UI & {
             background-color: $dim-grey;
             background-size: 5px 5px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-            background-attachment: fixed;
             background-repeat: repeat;
-
-            transition:
-                transform 0.5s ease-in-out,
-                width 0.5s ease-in-out,
-                opacity 0.5s ease-in-out,
-                box-shadow 0.5s ease-in-out,
-                border-radius 0.5s ease-in-out;
         }
     }
 }
 
-.prevent-scrolling {
-    overflow: hidden;
-}
+// .prevent-scrolling {
+//     overflow: hidden;
+// }
 
-main .desktop .desktop__files,
-main .app--cv .window-wrapper .window,
-main:before {
-    filter: blur(0);
-    transition:
-        border-radius 0.25 s ease-in-out,
-        filter 0.5s ease-in-out,
-        background-color 0.25s ease-in-out,
-        transform 0.5s ease-in-out,
-        width 0.5s ease-in-out,
-        opacity 0.5s ease-in-out;
+// main .desktop,
+// main .app,
+// main .status-bar,
+// main:before {
+// // main {
+//     filter: blur(20px);
+//     transition: all 0.75s ease-in-out 1s;
 
-    .prevent-scrolling & {
-        filter: blur(20px);
-        transition:
-            border-radius 0.25 s ease-in-out,
-            filter 0.5s ease-in-out,
-            background-color 0.25s ease-in-out,
-            transform 0.5s ease-in-out,
-            width 0.5s ease-in-out,
-            opacity 0.5s ease-in-out;
-    }
-}
+//     .loaded & {
+//         filter: blur(0);
+//         transition: all 0.75s ease-in-out 1s;
+//     }
+// }
 
 .swiper-slide img {
     opacity: 0;

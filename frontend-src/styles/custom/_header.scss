@@ -1,6 +1,7 @@
 .header {
     height: 100vh;
     // width: 100vh;
+    opacity: 1;
     position: absolute;
     z-index: 2000;
     display: flex;
@@ -9,6 +10,12 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+
+    &--hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
+    }
 
     .window {
         width: 100%;
@@ -34,10 +41,33 @@
     span {
         display: flex;
         justify-content: flex-start;
+
+        p {
+            @media (max-width: $mobile) {
+                font-size: 18px;
+            }
+        }
     }
 
     &__content {
         position: absolute;
         z-index: 2;
+    }
+
+    &__btn {
+        text-shadow: 0 0 10px $theme-color-soft-glow;
+        color: $theme-color;
+        font-family: 'VT323', monospace;
+        font-size: 36px;
+        position: absolute;
+        bottom: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (max-width: $mobile) {
+            bottom: 150px;
+        }
     }
 }

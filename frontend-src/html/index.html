@@ -4,15 +4,16 @@
     ${require('./partials/_head.html')}
 </head>
 
-<body class="">
-    <!-- <body class="prevent-scrolling"> -->
+<!-- <body class=""> -->
+
+<body>
     <section class="loading-screen" loading="">
         ${require('./partials/_loading-screen.html')}
     </section>
+    <header class="header">
+        ${require('./partials/windows/_header.html')}
+    </header>
     <main>
-        <header class="header">
-            ${require('./partials/windows/_header.html')}
-        </header>
 
         <section class="status-bar">
             ${require('./partials/_status-bar.html')}

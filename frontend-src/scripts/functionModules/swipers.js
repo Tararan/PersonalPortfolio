@@ -15,10 +15,9 @@ const swipersFunction = function () {
 
     const swiperContainer = '.swiper-container';
     const swiper = new Swiper(swiperContainer, {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         direction: 'horizontal',
-        slideToClickedSlide: true,
-        spaceBetween: 20
+        slideToClickedSlide: true
     });
 
     tabSlide.on('click', function () {
