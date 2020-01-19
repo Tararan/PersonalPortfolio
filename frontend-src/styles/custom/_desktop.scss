@@ -60,5 +60,14 @@
             }
 
         }
+
+        &-icon--portfolio {
+            opacity: 0.4;
+            cursor: not-allowed;
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
     }
 }

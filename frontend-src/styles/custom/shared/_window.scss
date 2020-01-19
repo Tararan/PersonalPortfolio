@@ -34,7 +34,7 @@
 
     .window-wrapper--contact & {
         background-color: $anthracite;
-        background-image: url('../images/noise-txtr.png');
+        background-image: url('https://res.cloudinary.com/dmqwm8tlw/image/upload/PortfolioSite/images//noise-txtr.png');
 
         .classic-UI & {
             background-color: $white;
@@ -51,7 +51,7 @@
     .window-wrapper--cv &,
     .window-wrapper--credits & {
         background-color: $white;
-        background-image: url('../images/noise-txtr.png');
+        background-image: url('https://res.cloudinary.com/dmqwm8tlw/image/upload/PortfolioSite/images//noise-txtr.png');
     }
 
     &__content {
@@ -274,7 +274,7 @@
 
     &__content-cv-info-image,
     &__content-contact-info-image {
-        background-image: url('../images/ivo-jurisic-wax-museum.png');
+        background-image: url('https://res.cloudinary.com/dmqwm8tlw/image/upload/PortfolioSite/images//ivo-jurisic-wax-museum.png');
         background-position: -200px -80px;
         background-size: 380%;
         // background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApQF5An8NodCYeec-M524_uFWNnTEvz71FRZmsHvHOs2hTmmm');
@@ -289,7 +289,7 @@
     }
 
     &__content-cv-info-image {
-        background-image: url('../images/ivo-jurisic.png');
+        background-image: url('https://res.cloudinary.com/dmqwm8tlw/image/upload/PortfolioSite/images//ivo-jurisic.png');
         background-repeat: no-repeat;
         background-position: top right;
         background-size: cover;

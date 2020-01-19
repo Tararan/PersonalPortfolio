@@ -19,19 +19,22 @@ const collapseToIconFunction = function () {
 
     app.on('click', function () {
         const $activeApp = $('.app.app--animate-opening');
-        app.removeClass(iconAnimated);
-        if ($activeApp.length) {
-            const activeElementClassString = $activeApp.attr('class').split(' ')[1];
-            const activeAppName = activeElementClassString.split('--')[1];
-            const activeAppIcon = $(`.desktop__files-icon--${activeAppName}`);
-            activeAppIcon.addClass(iconAnimated).siblings().removeClass(iconAnimated);
-        }
         const self = $(this);
-        const selfIconClassList = self[0].classList[1];
-        const appIconNameString = selfIconClassList.split('--')[1];
-        const currentAppWindow = $(`.app--${appIconNameString}`);
-        currentAppWindow.removeClass(collapseWindowsClass).addClass(openWindowsClass)
-            .siblings('.app').removeClass(openWindowsClass).addClass(collapseWindowsClass);
+        // When portfolio becomes available move this code from if
+        if (!self.attr('class').includes('portfolio')) {
+            app.removeClass(iconAnimated);
+            if ($activeApp.length) {
+                const activeElementClassString = $activeApp.attr('class').split(' ')[1];
+                const activeAppName = activeElementClassString.split('--')[1];
+                const activeAppIcon = $(`.desktop__files-icon--${activeAppName}`);
+                activeAppIcon.addClass(iconAnimated).siblings().removeClass(iconAnimated);
+            }
+            const selfIconClassList = self[0].classList[1];
+            const appIconNameString = selfIconClassList.split('--')[1];
+            const currentAppWindow = $(`.app--${appIconNameString}`);
+            currentAppWindow.removeClass(collapseWindowsClass).addClass(openWindowsClass)
+                .siblings('.app').removeClass(openWindowsClass).addClass(collapseWindowsClass);
+        }
     });
 
     // Closing header window
@@ -39,7 +42,7 @@ const collapseToIconFunction = function () {
         header.addClass(hiddenHeaderClass);
     });
 
-    anyBtn.on('click', function() {
+    anyBtn.on('click', function () {
         header.addClass(hiddenHeaderClass);
     });
 

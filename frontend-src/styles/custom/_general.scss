@@ -37,6 +37,13 @@ body {
     }
 }
 
+.iframe-controls-container {
+    display: none !important;
+    position: absolute !important;
+    z-index: -10 !important;
+    visibility: hidden !important;
+}
+
 main {
 
     &:before {
@@ -52,7 +59,7 @@ main {
         width: 100vw;
         height: 100vh;
         background-color: $black;
-        background-image: url("../images/background/benjamin-voros-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/dmqwm8tlw/image/upload/PortfolioSite/images/benjamin-voros-unsplash.jpg");
         // background-attachment: fixed;
         background-position: center;
         background-size: cover;
