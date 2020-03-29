@@ -18,6 +18,10 @@
     max-height: 80vh;
     overflow-y: scroll;
 
+    // .window-wrapper--img-tool & {
+    //     height: 100;
+    // }
+
     .classic-UI & {
         border-radius: 0px;
         box-shadow: 6px 6px 0px 0px $black;
@@ -313,5 +317,78 @@
         @media (max-width: $mobile) {
             margin-top: 10px;
         }
+    }
+
+    /* 
+        Image uploader styling
+    */
+    &__content-image-upload {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__content-image-upload-img__wrapper,
+    &__content-image-upload-canvas {
+        width: 450px;
+        position: relative;
+        overflow: visible;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+
+    #uploader {
+        display: none;
+    }
+
+    &__content-image-upload-file {
+        margin: 5px 0 50px;
+        border: 1px solid $theme-color;
+        padding: 0 10px;
+        margin: 40px 0;
+        width: 320px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        transition: background-color 0.35s ease-out,
+            color 0.35s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $theme-color;
+            color: $light-grey;
+            transition: background-color 0.35s ease-out,
+                color 0.35s ease-in-out;
+        }
+    }
+
+    &__content-image-upload-img,
+    &__content-image-upload-img-shadow {
+        width: 100%;
+        height: auto;
+    }
+
+    &__content-image-upload-img-shadow {
+        filter: blur(10px);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        z-index: -1;
+        transform: scale(1.02);
+    }
+
+    &__content-image-upload-canvas {
+        img {
+            width: 100%;
+        }
+    }
+
+    #canvas {
+        width: 100%;
+        margin-top: 20px;
     }
 }

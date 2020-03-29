@@ -16,3 +16,28 @@
 @import 'custom/status-bar';
 @import 'custom/spinner';
 @import 'custom/link';
+
+
+.paperscript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+#paperjs-canvas,
+.color,
+#img {
+    width: 700px;
+}
+
+#paper-src {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    filter: blur(100px);
+}

@@ -108,6 +108,11 @@ module.exports = {
             filename: 'html/index.html',
             chunks: ['app', 'vendor']
         }),
+        new HtmlWebpackPlugin({
+            template: 'frontend-src/html/testing-img.html',
+            filename: 'html/testing-img.html',
+            chunks: ['app', 'vendor']
+        }),
     ],
 
     devServer: {

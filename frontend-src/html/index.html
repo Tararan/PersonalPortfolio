@@ -4,17 +4,8 @@
     ${require('./partials/_head.html')}
 </head>
 
-<!-- <body class=""> -->
-
 <body>
-    <section class="loading-screen" loading="">
-        ${require('./partials/_loading-screen.html')}
-    </section>
-    <header class="header">
-        ${require('./partials/windows/_header.html')}
-    </header>
     <main>
-
         <section class="status-bar">
             ${require('./partials/_status-bar.html')}
         </section>
@@ -44,6 +35,13 @@
             <section class="window-wrapper window-wrapper--credits">
                 <div class="container">
                     ${require('./partials/windows/_credits.html')}
+                </div>
+            </section>
+        </section>
+        <section class="app app--img-tool app--animate-collapse">
+            <section class="window-wrapper window-wrapper--img-tool">
+                <div class="container">
+                    ${require('./partials/windows/_img-tool.html')}
                 </div>
             </section>
         </section>

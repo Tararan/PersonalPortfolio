@@ -45,7 +45,7 @@ const loadingAnimationFunction = function () {
             loadedPrevCount += 1;
             self.attr('loaded-order', loadedElCount);
             /*eslint-disable*/
-            console.log('loaded');
+            // console.log('loaded');
             /*eslint-enable*/
             // const completelyLoaded = parseInt((loadedPrevCount / countEl) * 100);
             // const loadingInfo = parseInt((loadedElCount / countEl) * 100);
@@ -57,8 +57,8 @@ const loadingAnimationFunction = function () {
             loadingProgressCircle = completelyLoadedCircle;
 
             /*eslint-disable*/
-            console.log('completelyLoadedCircle');
-            console.log(completelyLoadedCircle);
+            // console.log('completelyLoadedCircle');
+            // console.log(completelyLoadedCircle);
             /*eslint-enable*/
 
             // Loading Circle

@@ -1,0 +1,35 @@
+<div class="window">
+    <div class="window__toolbar">
+        <div class="window__toolbar-text">Contact info</div>
+        <div class="window__toolbar-buttons">
+            <span class="window__toolbar-buttons-close"></span>
+            <span class="window__toolbar-buttons-min"></span>
+            <span class="window__toolbar-buttons-max"></span>
+        </div>
+    </div>
+    <div class="window__content">
+        <div class="window__content-contact-info">
+            <div class="window__content-contact-info-text">
+                <p>
+                    Upload your image here, and this tool will do two things:
+                    <ol>
+                        <li>Add rounded border</li>
+                        <li>Add blurred drop shadow</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+        <div class="window__content-image-upload">
+            <label for="uploader" class="window__content-image-upload-file">Upload and stylize</label>
+            <input name="uploader" id="uploader" class="window__content-image-upload-file" type="file" />
+            <div class="window__content-image-upload-img__wrapper">
+                <img id="uploaded" class="js-upload window__content-image-upload-img" />
+                <!-- <img class="js-upload window__content-image-upload-img-shadow" /> -->
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="window__content-image-upload-canvas">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -54,6 +54,7 @@
     &--animate-collapse.app--contact>.window-wrapper,
     &--animate-collapse.app--credits>.window-wrapper,
     &--animate-collapse.app--cv>.window-wrapper,
+    &--animate-collapse.app--img-tool>.window-wrapper,
     &--animate-collapse.app--portfolio>.window-wrapper {
         transform: translateY(-50px) scale(0.02) !important;
         opacity: 0;
@@ -81,19 +82,19 @@
 
     &--animate-collapse.app--credits>.window-wrapper {
         transform: translateY(340px) scale(0.02) !important;
+
         @media (max-width: $mobile) {
             transform: translateY(400px) scale(0.02) !important;
         }
     }
 
+    &--animate-collapse.app--img-tool>.window-wrapper {
+        transform: translateY(380px) scale(0.02) !important;
 
-    // &--cv,
-    // &--contact,
-    // &--portfolio,
-    // &--credits {
-
-
-    // }
+        @media (max-width: $mobile) {
+            transform: translateY(400px) scale(0.02) !important;
+        }
+    }
 
     &--portfolio {
         z-index: 100;
