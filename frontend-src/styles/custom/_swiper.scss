@@ -2,6 +2,8 @@
     &-container {
         width: 100%;
         height: 100%;
+        position: relative;
+        z-index: 2;
     }
 
     &-wrapper {
@@ -11,32 +13,52 @@
         position: relative;
     }
 
+    &-slide__img {
+        // width: 80vw;
+        // display: flex;
+        // align-items: center;
+        // max-height: 80vh;
+        // overflow: hidden;
+        // background-size: cover;
+        
+        img {
+            width: auto;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: $drop-shadow;
+        }
+    }
+
+
+
     &-slide {
         min-width: 100%;
+        align-items: center;
+        justify-content: center;
         display: flex;
         overflow-y: scroll;
-        position: relative;
+        // position: relative;
 
-        &:before {
-            content: '';
-            position: fixed;
-            z-index: 200;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            border-top: 1px solid $dark-violet;
-            border-bottom: 1px solid $dark-violet;
-            background-color: $heliotrope;
-            // box-shadow: $glow;
-            border-radius: 20px;
-            transform: scaleX(0);
-            transform-origin: left;
-        }
+        // &:before {
+        //     content: '';
+        //     position: fixed;
+        //     z-index: 200;
+        //     bottom: 0;
+        //     width: 100%;
+        //     height: 4px;
+        //     border-top: 1px solid $dark-violet;
+        //     border-bottom: 1px solid $dark-violet;
+        //     background-color: $heliotrope;
+        //     // box-shadow: $glow;
+        //     border-radius: 20px;
+        //     transform: scaleX(0);
+        //     transform-origin: left;
+        // }
 
-        &[loaded-element='true']:before {
-            transform: scaleX(1);
-            transition: transform 4s ease-in-out;
-        }
+        // &[loaded-element='true']:before {
+        //     transform: scaleX(1);
+        //     transition: transform 4s ease-in-out;
+        // }
 
         // &--visible-description {
         //     overflow-y: hidden;

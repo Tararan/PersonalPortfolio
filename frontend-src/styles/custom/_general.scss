@@ -91,19 +91,19 @@ main {
 //     }
 // }
 
-.swiper-slide img {
-    opacity: 0;
-    filter: blur(20px);
-    transition: opacity 0.75s, filter 1.25s;
-    transform: translate3d(0, 0, 0);
-}
+// .swiper-slide img {
+//     opacity: 0;
+//     filter: blur(20px);
+//     transition: opacity 0.75s, filter 1.25s;
+//     transform: translate3d(0, 0, 0);
+// }
 
-.swiper-slide[loaded-element='true'] img {
-    opacity: 1;
-    filter: blur(0px);
-    transition: opacity 0.75s, filter 1.25s;
+// .swiper-slide[loaded-element='true'] img {
+//     opacity: 1;
+//     filter: blur(0px);
+//     transition: opacity 0.75s, filter 1.25s;
 
-}
+// }
 
 .swiper-slide--visible-description[loaded-element='true'] img {
     filter: blur(20px);

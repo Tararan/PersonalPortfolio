@@ -5,11 +5,45 @@
 </head>
 
 <body>
-    <div class="paperscript split">
-        <!-- <!-- <canvas id="paperjs-canvas"></canvas> --> -->
-        <img id="img" src="../images/background/flower.jpg" alt='' />
+    <!-- <div class="paperscript split"> -->
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img id="img" class="img" src="../images/background/luke-richardson-unsplash.jpg" alt='' />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img id="img-next" class="img" src="../images/background/benjamin-voros-unsplash.jpg" alt='' />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img class="img" src="../images/background/flower.jpg" alt='' />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img class="img" src="../images/background/colorful-bg.jpg" alt='' />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img class="img" src="../images/background/forest.jpg" alt='' />
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__img">
+                    <img class="img" src="../images/background/mountains.jpg" alt='' />
+                </div>
+            </div>
+        </div>
     </div>
-    <canvas id="paper-src"></canvas>
+    <!-- </div> -->
+    <canvas class="canvas" id="active"></canvas>
+    <canvas class="canvas canvas--inactive" id="next"></canvas>
 </body>
 
 </html>

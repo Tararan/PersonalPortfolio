@@ -12,8 +12,8 @@ import switchOSFunction from './switchOS';
 import portfolioDescriptionFunction from './portfolioDescription';
 import linkComponents from './linkAnimations';
 import renderingUploadedImgComponent from './renderingUploadedImg';
-import manipulateImagesFunction from './manipulateImages';
-import testingPaperAnimationsFunction from './testingPaperAnimations';
+// import manipulateImagesFunction from './manipulateImages';
+// import testingPaperAnimationsFunction from './testingPaperAnimations';
 
 const functionsInit = function () {
     $(function () {
@@ -28,8 +28,8 @@ const functionsInit = function () {
         portfolioDescriptionFunction();
         linkComponents();
         renderingUploadedImgComponent();
-        manipulateImagesFunction();
-        testingPaperAnimationsFunction();
+        // manipulateImagesFunction();
+        // testingPaperAnimationsFunction();
     });
 };
 /*eslint-enable*/

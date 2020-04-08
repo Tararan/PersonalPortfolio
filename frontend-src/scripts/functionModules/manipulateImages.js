@@ -8,27 +8,7 @@ const manipulateImagesFunction = function () {
     paper.setup(canvas);
     // paper.install(window);
     // Create a raster item using the image tag with id='mona'
-    const raster = new paper.Raster('img');
-
-    // Move the raster to the center of the view
-    /*     raster.position = paper.view.center;
-    
-        // Create a circle shaped path at {x: 50, y: 50}
-        // with a radius of 30:
-        const path = new paper.Path.Circle({
-            center: [50, 50],
-            radius: 30,
-            strokeColor: 'white'
-        });
-    
-        canvas.addEventListener('mousemove', function (event) {
-            // Set the fill color of the path to the average color
-            // of the raster at the position of the mouse:
-            console.log('%c > Color','color: yellow; font-size: medium');
-            console.log(event);
-            console.log(event);
-            path.fillColor = raster.getAverageColor(event);
-        }); */
+    // const raster = new paper.Raster('img');
 
     // Hide the raster:
     raster.visible = true;
@@ -45,11 +25,13 @@ const manipulateImagesFunction = function () {
         // Since the example image we're using is much too large,
         // and therefore has way too many pixels, lets downsize it to
         // 40 pixels wide and 30 pixels high:
-        // raster.size = new paper.Size(50, 50);
+        raster.size = new paper.Size(50, 50);
 
-        const color = raster.getAverageColor(0, 0);
-        console.log('> color');
-        console.log(color);
+        const colorLeftTop = raster.getAverageColor(0, 0);
+        const colorRightTop = raster.getAverageColor(paper.view.size.width, 0);
+        const colorCenter = raster.getAverageColor(paper.view.size.width / 2, paper.view.size.height / 2);
+        const colorLeftBtm = raster.getAverageColor(0, paper.view.size.height);
+        const colorRightBtm = raster.getAverageColor(paper.view.size.width, paper.view.size.height);
 
         /*         for (let y = 0; y < raster.height; y++) {
                     for (let x = 0; x < raster.width; x++) {

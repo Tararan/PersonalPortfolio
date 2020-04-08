@@ -24,20 +24,31 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    height: 100%;
 }
 
-#paperjs-canvas,
-.color,
-#img {
+.canvas,
+.color {
     width: 700px;
 }
 
-#paper-src {
+.canvas {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.canvas--inactive {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    // filter: blur(100px) saturate(2);
+}
+
+.canvas {
     width: 100vw;
     height: 100vh;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 0;
-    filter: blur(100px);
+    // filter: blur(150px) saturate(2);
 }
