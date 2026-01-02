@@ -54,7 +54,16 @@ module.exports = {
                 test: /\.(sass|scss)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'css-loader',
-                    use: ['css-loader', 'postcss-loader', 'sass-loader'],
+                    use: [
+                        'css-loader', 
+                        'postcss-loader', 
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                implementation: require('sass')
+                            }
+                        }
+                    ],
                     publicPath: '/'
                 })
             },
@@ -104,8 +113,8 @@ module.exports = {
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
-            template: 'frontend-src/html/index.html',
-            filename: 'html/index.html',
+            template: 'frontend-src/index.html',
+            filename: 'index.html',
             chunks: ['app', 'vendor']
         }),
         new HtmlWebpackPlugin({
@@ -122,7 +131,7 @@ module.exports = {
         port: 1993,
         open: true,
         historyApiFallback: {
-            rewrites: [{ from: /^\/$/, to: '/html/index.html' }]
+            rewrites: [{ from: /^\/$/, to: '/index.html' }]
         },
         watchContentBase: true
     }

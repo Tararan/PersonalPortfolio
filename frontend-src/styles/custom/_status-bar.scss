@@ -1,6 +1,6 @@
 .status-bar {
     height: 30px;
-    width: 100vw;
+    width: calc(100% - 20px);
     background-color: $black;
     position: fixed;
     top: 0;
